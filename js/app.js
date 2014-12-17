@@ -21,9 +21,10 @@ var newGame = function(){
 	//clears form and feedback box
 	$(".guessInput").val("");
 	resetAlerts();
-	//shows guessing section and feedback section, if previously hidden
+	//unhides stuff that was previously hidden
 	$(".feedback").show();
 	$(".row").show();
+	$('.hint').show();
 	//resets instructions
 	$("p").text("I've picked a number! What do you think it is?");
 	//hides play again button and previous guesses box
@@ -38,11 +39,20 @@ var newGame = function(){
 	oldGuesses = [];
 };
 $(document).ready(function(){
-	//new game automatically starts
+	//new game automatically starts when site loads
 	newGame();
 
+	//on click of play again a new game starts
 	$(".playAgain").on("click", function(){
 		newGame();
+	});
+
+	//on click of hint button a hint is shown
+	$(".hint").on("click", function(){
+
+		var hintHelper= randomizer();
+		var hintNum = secretNumber-hintHelper;
+		$(".feedback").text("If you added "+hintHelper+" and "+hintNum+" you would get my secret number");
 	});
 	//on click of guess button
 	$(".guess").on("click", function(){
@@ -53,6 +63,7 @@ $(document).ready(function(){
 			$(".feedback").addClass("alert-warning");
 			$(".feedback").hide();
 			$(".row").hide();
+			$(".hint").hide();
 			$(".playAgain").show();
 			$("p").text("Oh no! You ran out of guesses. I was thinking of "+secretNumber);
 		}
@@ -82,7 +93,7 @@ $(document).ready(function(){
 		else if(guessedNumber===secretNumber){
 			$(".feedback").addClass("alert-success");
 			$(".feedback").text("You won! And it only took you "+oldGuesses.length+" tries!");
-		
+			$(".hint").hide();
 			//shows play again button
 			$(".playAgain").show();
 		}
