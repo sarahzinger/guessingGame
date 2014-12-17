@@ -5,11 +5,12 @@
 	<title>Welcome to the Guessing Game</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
+
 </head>
 <body>
 	<div class="container">
-		<div class="page-header">
- 		 <h1>Guessing Game<small> ~ I'm thinking of a number...</small></h1>
+		<div class="page-header text-center">
+ 		 <h1>Guessing Game</h1>
 		</div>
 		<ul class="nav nav-pills nav-justified">
 			<li role="presentation"><a href="#">Instructions</a></li>
@@ -21,9 +22,9 @@
 			<div class="row"class ="text-center">
 			  <div class="col-lg-6" "text-center">
 			    <div class="input-group""text-center">
-			    	<input type="text" class="form-control">
+			    	<input type="text" class="form-control guessInput">
 			     	<span class="input-group-btn">
-			        	<button class="btn btn-default" type="button">Guess!</button>
+			        	<button class="btn btn-default guess" type="button">Guess!</button>
 			      	</span>
 			    </div><!-- /input-group -->
 			  </div><!-- /.col-lg-6 -->
@@ -37,5 +38,7 @@
 			<button type="button" class="btn btn-default">Play Again</button>
 		</div>
 	</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
