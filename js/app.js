@@ -35,6 +35,7 @@ var newGame = function(){
 	$('.hint').text("Hint");
 	$('.hint').show();
 	$("p").text("I've picked a number! What do you think it is?");
+	$("p").show();
 	//hides play again button and previous guesses box
 	$(".playAgain").hide();
 	$(".prevGuess").hide();
