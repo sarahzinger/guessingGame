@@ -38,6 +38,7 @@ var newGame = function(){
 	//hides play again button and previous guesses box
 	$(".playAgain").hide();
 	$(".prevGuess").hide();
+	$("iframe").hide();
 	//welcomes user
 	$(".feedback").addClass("alert-success");
 	$(".feedback").text("Welcome! Pick a number between 1 and 100");
@@ -101,7 +102,10 @@ $(document).ready(function(){
 		else if(guessedNumber===secretNumber){
 			$(".feedback").addClass("alert-success");
 			$(".feedback").text("You won! And it only took you "+oldGuesses.length+" tries!");
+			$("iframe").show();
 			$(".hint").hide();
+			$("p").hide();
+			$(".row").hide();
 			//shows play again button
 			$(".playAgain").show();
 	
