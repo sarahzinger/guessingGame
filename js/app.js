@@ -121,7 +121,7 @@ $(document).ready(function(){
 				if(shouldBhigher(oldGuesses[oldGuesses.length-1],secretNumber)){
 					$(".feedback").append("...my expectations couldn't be HIGHER (if you know what I mean)");
 				}else{
-					$(".feedback").append("...that was a real LOW blow, ya know?");
+					$(".feedback").append("...better deliver another LOW blow, ya know?");
 				}
 				
 			}
