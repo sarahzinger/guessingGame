@@ -1,0 +1,19 @@
+body{
+	background-color: #8DA7A3;
+}
+h1{
+	font-family: 'Lobster', serif;
+}
+.jumbotron{
+	background-color: #7D6482;
+}
+.input-group{
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.feedback{
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}

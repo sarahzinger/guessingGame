@@ -96,6 +96,7 @@ $(document).ready(function(){
 			$(".hint").hide();
 			//shows play again button
 			$(".playAgain").show();
+	
 		}
 		//if guessedNumber isn't a winner:
 		else{
