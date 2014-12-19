@@ -11,6 +11,14 @@ var isHotter = function(oldNum, newNum, winNum){
 		return false;
 	}
 };
+var shouldBhigher = function(guessNum, winNum){
+
+	if(guessNum < winNum){
+		return true;
+	}else{
+		return false;
+	}
+};
 var resetAlerts = function(){
 	$(".feedback").removeClass("alert-success");
 	$(".feedback").removeClass("alert-warning");
@@ -109,13 +117,25 @@ $(document).ready(function(){
 			//checks to see if hotter or colder
 			else if(isHotter(oldGuesses[oldGuesses.length-2],oldGuesses[oldGuesses.length-1],secretNumber)){
 				$(".feedback").addClass("alert-danger");
-				$(".feedback").text("****Getting Warmer****");
+				$(".feedback").text("Getting Warmer");
+				if(shouldBhigher(oldGuesses[oldGuesses.length-1],secretNumber)){
+					$(".feedback").append("...my expectations couldn't be HIGHER (if you know what I mean)");
+				}else{
+					$(".feedback").append("...that was a real LOW blow, ya know?");
+				}
+				
 			}
 			else{
 				resetAlerts();
 				$(".feedback").addClass("alert-info");
 				$(".feedback").text("Brrrr.... you're colder");
+				if(shouldBhigher(oldGuesses[oldGuesses.length-1],secretNumber)){
+					$(".feedback").append("...maybe try a higher number?");
+				}else{
+					$(".feedback").append("...maybe try a lower number?");
+				}
 			}
+
 		}
 	});
 });
